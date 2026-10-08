@@ -1,0 +1,160 @@
+/* ===== BASE / RESET ===== */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --text: #1f1f1f;
+    --muted: #666;
+    --border: #d8d8d8;
+    --accent: #315f8a;
+    --secondary: #444;
+    --separator: #e5e5e5;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+/* ===== TYPOGRAPHY ===== */
+
+h1, h2, h3 {
+    font-weight: 450;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+
+h3 {
+    font-size: 1.15rem;
+}
+
+/* ===== LINKS ===== */
+
+a {
+    color: var(--text);
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: fit-content;
+
+    transition: opacity 0.15s ease;
+}
+
+a:visited {
+    color: var(--text);
+}
+
+a:hover {
+    color: var(--accent);
+    opacity: 0.65;
+}
+
+a:focus-visible {
+    color: var(--accent);   
+    opacity: 0.6;
+
+    outline: 2px solid var(--text);
+    outline-offset: 3px;
+}
+
+/* ===== MAIN LAYOUT ===== */
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+}
+
+/* ===== SIDEBAR ===== */
+
+.sidebar {
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+}
+
+.identity {
+    margin-bottom: 0.65rem;
+}
+
+.identity p {
+    margin: 0.15rem 0;
+    color: var(--secondary);
+}
+
+address {
+    font-style: normal;
+    margin-top: 4rem;
+}
+
+address ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+address li {
+    margin-bottom: 0.4rem;
+}
+
+/* ===== PROJECTS ===== */
+
+.projects {
+    border-left: 1px solid var(--border);
+    padding-left: 2rem;
+}
+
+article {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--separator);
+}
+
+article:last-of-type {
+    border-bottom: none;
+}
+
+.project-meta {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 800px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: static;
+    }
+
+    address {
+        margin-bottom: 4rem;
+    }
+
+    .projects {
+        border-left: none;
+        border-top: 1px solid var(--border);
+
+        padding-left: 0;
+        padding-top: 1.5rem;
+    }
+}
