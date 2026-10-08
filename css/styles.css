@@ -69,6 +69,11 @@ a:focus-visible {
     outline-offset: 3px;
 }
 
+.icon {
+    width: 1.3em;
+    height: 1.3em;
+}
+
 /* ===== MAIN LAYOUT ===== */
 
 main {
